@@ -44,7 +44,7 @@
               <a class="nav-link" href="userprofile.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="myaccounts.html">Accounts</a>
+              <a class="nav-link" href="manageaccounts.html">Manage Accounts</a>
             </li>
           </ul>
           
@@ -63,7 +63,7 @@
                   <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
                     aria-labelledby="navbarDropdownMenuLink-55">
                     <a class="dropdown-item" href="userprofile.html">My Profile</a>
-                    <a class="dropdown-item" href="myaccounts.html">My Accounts</a>
+                    <a class="dropdown-item" href="manageaccounts.html">Manage Accounts</a>
                   </div>
                 </li>
               </ul>
@@ -144,6 +144,13 @@
               </button>
             </div>
             <div class="modal-body mx-3">
+
+                    <div class="md-form mb-5">
+                            <i class="fas fa-tag prefix grey-text"></i>
+                            <input type="text" id="form32" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form32">Account number</label>
+                        </div>
+                
               <select class="form-control" ng-model="transaction.type">
                     <option value="" selected disabled hidden>Account Type</option>
                     <option value='checking'>Checking</option>
@@ -166,9 +173,21 @@
                 <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
               </div>
        -->
+       
+       <div class="md-form">
+            <i class="fas fa-envelope prefix grey-text"></i>
+            <input type="email" id="form2" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="form2">Your Username/Email</label>
+          </div>
+          <div class="md-form mb-5">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <input type="text" id="form3" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="form1">Your Password</label>
+              
+            </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button class="btn">Create</button>
+              <button class="btn">Confirm Creation</button>
             </div>
           </div>
         </div>
@@ -186,23 +205,34 @@
         </button>
       </div>
       <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <input type="text" id="form32" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="form32">Account number</label>
+                  </div>
         <div class="md-form mb-5">
           <i class="fas fa-user prefix grey-text"></i>
           <input type="text" id="form34" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form34">User to grant access</label>
         </div>
-
+        <div class="md-form">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="email" id="form2" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="form2">Your Username/Email</label>
+              </div>
+              <div class="md-form mb-5">
+                  <i class="fas fa-lock prefix grey-text"></i>
+                  <input type="text" id="form3" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="form1">Your Password</label>
+                  
+                </div>
         <!-- <div class="md-form mb-5">
           <i class="fas fa-envelope prefix grey-text"></i>
           <input type="email" id="form29" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form29">Your email</label>
         </div> -->
 
-        <div class="md-form mb-5">
-          <i class="fas fa-tag prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form32">Account number</label>
-        </div>
+        
 
         <!-- <div class="md-form">
           <i class="fas fa-pencil prefix grey-text"></i>
@@ -212,7 +242,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique">Grant <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-unique">Confirm Access <i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
     </div>
   </div>
@@ -247,12 +277,12 @@
         <div class="md-form">
             <i class="fas fa-envelope prefix grey-text"></i>
             <input type="email" id="form2" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="form2">Username/Email</label>
+            <label data-error="wrong" data-success="right" for="form2">Your Username/Email</label>
           </div>
           <div class="md-form mb-5">
               <i class="fas fa-lock prefix grey-text"></i>
               <input type="text" id="form3" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="form1">Password</label>
+              <label data-error="wrong" data-success="right" for="form1">Your Password</label>
               
             </div>
         
@@ -272,7 +302,7 @@
 
       <!--Footer-->
       <div class="modal-footer justify-content-center">
-        <a type="button" class="btn btn-outline-warning waves-effect">Delete <i class="fas fa-paper-plane-o ml-1"></i></a>
+        <a type="button" class="btn btn-outline-warning waves-effect">Confirm Deletion <i class="fas fa-paper-plane-o ml-1"></i></a>
       </div>
     </div>
     <!--/.Content-->

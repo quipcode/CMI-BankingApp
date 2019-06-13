@@ -17,12 +17,18 @@
     <link href="css/style.css" rel="stylesheet">
     <!--Main CSS-->
     <link href="css/main.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>   -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"> -->
+
+
 </head>
 <body>
 
     <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark lighten-1">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">CMI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
           aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,15 +36,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="userwelcome.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="userprofile.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="myaccounts.html">Accounts</a>
             </li>
           </ul>
           
@@ -57,8 +63,7 @@
                   <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
                     aria-labelledby="navbarDropdownMenuLink-55">
                     <a class="dropdown-item" href="userprofile.html">My Profile</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="myaccounts.html">My Accounts</a>
                   </div>
                 </li>
               </ul>
@@ -66,64 +71,33 @@
       </nav>
       <!--/.Navbar -->
 
-     
-        <section id="cover">
-                <div id="cover-caption">
-                    <div id="container" class="container">
-                        <div class="row text-white">
-                            <div class="col-sm-6 offset-sm-3 text-center">
-                                <h1 class="display-4">Cash me Inside</h1>
-                                <div class="info-form">
-                                        <form class="text-center border border-light p-5">
-
-                                                <p class="h4 mb-4">Sign in</p>
-                                                
-                                              
-                                                <!-- Email -->
-                                                <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail/Username">
-                                              
-                                                <!-- Password -->
-                                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-                                              
-                                                <div class="d-flex justify-content-around">
-                                                    <div>
-                                                        <!-- Remember me -->
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                                                            <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <!-- Forgot password -->
-                                                        <a href="forgetpassword.html">Forgot password?</a>
-                                                    </div>
-                                                </div>
-                                              
-                                                <!-- Sign in button -->
-                                                <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-                                              
-                                                <!-- Register -->
-                                                <p>Not a member?
-                                                    <a href="registerform.html">Register</a>
-                                                </p>
-                                              
-                                                
-                                              
-                                              </form>
-                                              
-                                </div>
-                                <br>
-            
-                                <!-- <a href="#nav-main" class="btn btn-outline-secondary btn-sm" role="button">
-                                    More
-                                </a> -->
-                            </div>
-                        </div>
+      <div class="hero-wrap js-fullheight" style="background-image: url('images/samuel-clara-69657-unsplash.jpg'); background-size:cover" data-stellar-background-ratio="0.5" id="imageclimb">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+            <div class="col-xl-10 ftco-animate mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }">
+                <!-- <p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Enabling you to reach higher heights...</p> -->
+              <h1 class=" mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Welcome <span> Username</span></h1>
+                <p>What would you like to do today?</p>
+              <!-- Employee/admin search functionality -->
+              <div class="btn-toolbar mt-4" role="toolbar" aria-label="Toolbar with button groups" id="accountactions">
+                    <div class="btn-group ml-4 mr-3" role="group" aria-label="First group">
+                      <!-- <button type="button" class="btn">Create New Account</button> -->
+                      <a href="myaccounts.html" class="btn">View your accounts</a>
                     </div>
-                </div>
-            </section>
-        
-        
+                    <div class="btn-group mr-3" role="group" aria-label="Second group">
+                      <!-- <button type="button" class="btn">Grant Access</button> -->
+                      <a href="userprofile.html" class="btn" >Manage personal info</a>
+                      
+                    </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>

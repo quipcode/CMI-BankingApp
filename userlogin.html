@@ -20,16 +20,17 @@
 </head>
 <body>
 
+     
         <section id="cover">
                 <div id="cover-caption">
                     <div id="container" class="container">
                         <div class="row text-white">
                             <div class="col-sm-6 offset-sm-3 text-center">
-                                <h1 class="display-4">Cash me Inside</h1>
+                                <h1 class="display-4">Cash Me Inside</h1>
                                 <div class="info-form">
-                                        <form class="text-center border border-light p-5">
+                                        <form class="text-center border border-light p-5" method="POST">
 
-                                                <p class="h4 mb-4">Register</p>
+                                                <p class="h4 mb-4">Sign in</p>
                                                 
                                               
                                                 <!-- Email -->
@@ -37,25 +38,28 @@
                                               
                                                 <!-- Password -->
                                                 <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-                                                <input type="password" id="defaultLoginFormPasswordConfirm" class="form-control mb-4" placeholder="Renter Password">
-                                                <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="First Name">
-                                                <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Last Name">
-                                                <input type="tel" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-                                                <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Language"> -->
-                                                <!-- <p> Provide your address below </p> -->
-                                                <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Street Address">
-                                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="City">
-                                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="State">
-                                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Zip Code">
-                                                 -->
                                               
-                                                
+                                                <div class="d-flex justify-content-around">
+                                                    <div>
+                                                        <!-- Remember me -->
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                                            <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <!-- Forgot password -->
+                                                        <a href="forgetpassword.html">Forgot password?</a>
+                                                    </div>
+                                                </div>
                                               
                                                 <!-- Sign in button -->
-                                                <button class="btn btn-info btn-block my-4" type="submit"> Continue Registration</button>
-                                                
+                                                <button class="btn btn-info btn-block my-4" type="submit" id="loginSubmit">Sign in</button>
                                               
-                                                
+                                                <!-- Register -->
+                                                <p>Not a member?
+                                                    <a href="registerform.html">Register</a>
+                                                </p>
                                               
                                                 
                                               
@@ -83,5 +87,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <!-- <link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" /> -->
+  <!-- <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.0-rc.2/angular.js" data-semver="1.4.0-rc.2"></script>
+  <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="app.js"></script -->
+</head>
+
+<body ng-controller="MainCtrl">
+  
+</body>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!--Main CSS-->
+    <link href="css/main.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>   -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"> -->
+
+
+</head>
+<body>
+
+    <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark lighten-1">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+          aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Accounts</a>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+                <!-- <li class="nav-item">
+                  <a class="nav-link waves-effect waves-light">1
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </li> -->
+                <li class="nav-item avatar dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
+                      alt="avatar image" height="35">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                    aria-labelledby="navbarDropdownMenuLink-55">
+                    <a class="dropdown-item" href="userprofile.html">My Profile</a>
+                    <a class="dropdown-item" href="myaccounts.html">My Accounts</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+        </div>
+      </nav>
+      <!--/.Navbar -->
+
+      <div class="container">
+
+        <h1 class="firstWord">CMI</h1>
+        <hr />
+        <!--<p>Hello {{account.name}}! You currently have a balance of: {{account.runningBalance | currency}}-->
+        <!--</p>-->
+        
+         <h4 class="alert alert-default" ng-bind-template="Hello {{account.name}} your balance is: {{account.runningBalance | currency}}" moneywarn="account.runningBalance" data-startbalance="{{account.startingBalace}}"></h4>
+        
+        <div class="row">
+          <div class="col-md-12">
+    
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Make a Transaction</h3>
+              </div>
+              <div class="panel-body">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="" ng-model='transaction.description'>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      
+                      <input type="number" step="0.01" min=0 class="form-control" id="amount" placeholder="$0.00" ng-model="transaction.amount">
+                    </div>
+                  </div>
+                  <select class="form-control" ng-model="transaction.type">
+                    <option value='deposit'>Deposit</option>
+                    <option value='withdraw'>Withdraw</option>
+                  </select>
+                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()">Save</button>
+                </form>
+              </div>
+            </div>
+            
+
+            
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Make a Transfer</h3>
+              </div>
+              <div class="panel-body">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="description">Originating Account</label>
+                    <input type="text" class="form-control mr-1" id="description" placeholder="Transfer From Act#" ng-model='transaction.description'>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Destined Account</label>
+                    <input type="text" class="form-control mr-1" id="description" placeholder="Transfer To Act#" ng-model='transaction.description'>
+                  </div>
+                  <div class="input-group">
+                      <label for="description">Transfer Amount</label>
+                      <input type="number" step="0.01" min=0 class="form-control mr-1" id="amount" placeholder="0.00" ng-model="transaction.amount">
+                  </div>
+                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()">Save</button>
+                </form>
+              </div>
+            </div>
+
+            <hr />
+            <p>
+              <strong>Sort Transactions by:</strong>
+              <select ng-model="transType" class="form-control">
+                <option value=''>All</option>
+                <option value='deposit'>Deposit</option>
+                <option value='withdraw'>Withdraw</option>
+                <option value='transfer'>Transfer</option>
+              </select>
+            </p>
+    
+            <div class="container">
+    
+                
+        
+                         
+              <table class="table table-striped" id="transactiontable">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Credit</td>
+                        <td>No</td>
+                        <td>View</td>
+                        <td>View</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Debit</td>
+                        <td>No</td>
+                        <td>View</td>
+                        <td>View</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>Yes</td>
+                        <td><span title="Click to view account"> <a href="viewaccount.html">View</a></span> </td>
+                        <td>View</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                 
+      
+        
+    
+      
+        
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!--Main CSS-->
+    <link href="css/main.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>   -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"> -->
+
+
+</head>
+<body>
+
+    <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark lighten-1">
+        <a class="navbar-brand" href="#">CMI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+          aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="userprofile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="myaccounts.html">Accounts</a>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+                <!-- <li class="nav-item">
+                  <a class="nav-link waves-effect waves-light">1
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </li> -->
+                <li class="nav-item avatar dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
+                      alt="avatar image" height="35">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                    aria-labelledby="navbarDropdownMenuLink-55">
+                    <a class="dropdown-item" href="userprofile.html">My Profile</a>
+                    <a class="dropdown-item" href="myaccounts.html">My Accounts</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+        </div>
+      </nav>
+      <!--/.Navbar -->
+      <div class="container mt-7">
+
+            
+            <div class="row">
+                    <div class="col-6 text-center">
+                            <h3 class="mb-0">My Accounts</h3>
+                    </div>
+            </div>
+
+                 
+      <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Account ID</th>
+                <th scope="col">Account Type</th>
+                <th scope="col">Account Status</th>
+                <th scope="col">Is Joint?</th>
+                <th scope="col">Access</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Credit</td>
+                <td class="p-3 mb-2 bg-success text-white">Active</td>
+                <td>No</td>
+                <td>View</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Debit</td>
+                <td class="p-3 mb-2 bg-warning text-dark">Pending Joint Approval</td>
+                <td>No</td>
+                <td>View</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td class="p-3 mb-2 bg-danger text-white">Pending Deletion</td>
+                <td>Yes</td>
+                <td><span title="Click to view account"> <a href="viewaccount.html">View</a></span> </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="btn-toolbar mt-4" role="toolbar" aria-label="Toolbar with button groups" id="accountactions">
+                <div class="btn-group ml-4 mr-3" role="group" aria-label="First group">
+                  <!-- <button type="button" class="btn">Create New Account</button> -->
+                  <a href="" class="btn" data-toggle="modal" data-target="#modalLoginForm">Create New Account</a>
+                </div>
+                <div class="btn-group mr-3" role="group" aria-label="Second group">
+                  <!-- <button type="button" class="btn">Grant Access</button> -->
+                  <a href="" class="btn" data-toggle="modal" data-target="#modalContactForm">Grant Access</a>
+                  
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                  <!-- <button type="button" class="btn">Delete Account</button> -->
+                  <a href="" class="btn" data-toggle="modal" data-target="#orangeModalSubscription">Delete Account</a>
+                </div>
+              </div>
+        </div>
+
+<!-- Modal for create account -->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Create New Account</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+              <select class="form-control" ng-model="transaction.type">
+                    <option value="" selected disabled hidden>Account Type</option>
+                    <option value='checking'>Checking</option>
+                    <option value='saving'>Saving</option>
+                    <option value='joint'>Joint</option>
+                </select>
+                <!-- <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-email" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">For joint accounts provide user's email</label>
+                  </div> -->
+                  <div class="md-form mb-5">
+                      <i class="fas fa-user prefix grey-text"></i>
+                      <input type="text" id="orangeForm-name" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="orangeForm-name">For Joint Account provide user email</label>
+                  </div>
+              <!-- <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" id="defaultForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+              </div>
+       -->
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for joint account -->
+      <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Grant Access</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="form34" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form34">User to grant access</label>
+        </div>
+
+        <!-- <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="form29" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form29">Your email</label>
+        </div> -->
+
+        <div class="md-form mb-5">
+          <i class="fas fa-tag prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form32">Account number</label>
+        </div>
+
+        <!-- <div class="md-form">
+          <i class="fas fa-pencil prefix grey-text"></i>
+          <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+          <label data-error="wrong" data-success="right" for="form8">Your message</label>
+        </div> -->
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-unique">Grant <i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal to delete account -->
+
+<div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h4 class="modal-title white-text w-100 font-weight-bold py-2">Delete Account</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+          
+        
+
+        <div class="md-form mb-5">
+            <i class="fas fa-tag prefix grey-text"></i>
+            <input type="text" id="form32" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="form32">Account number</label>
+        </div>
+
+        <div class="md-form">
+            <i class="fas fa-envelope prefix grey-text"></i>
+            <input type="email" id="form2" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="form2">Username/Email</label>
+          </div>
+          <div class="md-form mb-5">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <input type="text" id="form3" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="form1">Password</label>
+              
+            </div>
+        
+      </div>
+<!-- 
+      <div class="md-form">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="form2" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+      </div>
+      <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div> -->
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-outline-warning waves-effect">Delete <i class="fas fa-paper-plane-o ml-1"></i></a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+</html>

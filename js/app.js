@@ -18,21 +18,26 @@ function validateLogin(){
     let loginCredentials = {email: loginEmail, password: loginPassword}
     let validUser = false;
     let typeUser;
+    let incrementer;
 
     for(var i = 0; i < users.length; i++){
         if(loginCredentials.email == users[i].email  && loginCredentials.password == users[i].password){
-            (i == 0)
             validUser = true;
+            incrementer = i;
             break;
         }
     }    
-    if(validUser && i != 0){
+    if(validUser && incrementer != 0){
         window.open("employeewelcome.html");
-    }else if(validUser && i == 0){
-        window.open("employeewelcome.html");
+    }else if(validUser && incrementer == 0){
+        window.open("userwelcome.html");
     }else{
         alert("You've provided incorrect credentials. Please Try again")
     }
+    
+}
+
+function setUserSession(){
     
 }
 

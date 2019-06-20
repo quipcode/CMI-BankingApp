@@ -89,9 +89,8 @@ module.exports = function(app){
                 })
             })
         }else if(action == "Withdraw"){
-            let aid = req.params.accountId
-            let action = req.body.action
-            let amount = parseInt(req.body.amount)
+            let aid = req.params.accountId;
+            let amount = parseInt(req.body.amount);
             let currentBalance;
             let newBalance; 
             accountDao.checkBalanceAccount(aid, function(err, rows){
@@ -102,15 +101,82 @@ module.exports = function(app){
                     console.log("insuffient funds")
                     res.json({error: "You have insuffient funds to withdraw " + amount})
                 }else{
+                    newBalance = currentBalance - amount;
+                    accountDao.makeWithdrawTransaction(aid, newBalance, amount, function(err, rows){
+                        if(err) throw err;
+                    })
+                    accountDao.updateBalanceAccount(aid, newBalance, function(err, rows){
+                        if(err) throw err;
+                        res.json({success: amount + " has been withdrawn from account: " + aid});
+                    })
                     
                 }
             })
         }
-        
-        
-        
     })
 
+    app.post("/api/accounts/transfer", (req, res) => {
+        
+        let action = req.body.action;
+        let currentBalance;
+        let newBalance;
+        let currentDestBalance;
+        let newDestBalance;
+        let amount = req.body.amount;
+        let currentaid = req.body.currentAccountId;
+        let destinedaid = req.body.destinedAccountId;
+        if(action == "Transfer"){
+            if(destinedaid == currentaid){
+                res.json({error: "You can not transfer into your own account"})
+            }else{
+                accountDao.checkBalanceAccount(currentaid, function(err, rows){
+                    if(err) throw err;
+                    currentBalance = rows[0][0]["act_balance"]
+                    if(amount <= currentBalance){
+                        accountDao.confirmAccountExists(destinedaid, function(err, rows){
+                            if(err) throw err;
+                            if(rows[0][0]["count(*)"] == 1){
+                                accountDao.confirmActiveAccount(destinedaid,function(err, rows){
+                                    if(err) throw err;
+                                    if(rows[0][0]["account_status"] == "Active"){
+                                        newBalance = currentBalance - amount;
+                                        accountDao.makeTransferTransaction(currentaid, newBalance, amount, destinedaid, function(err, rows){
+                                            if(err) throw err;
+                                        })
+                                        accountDao.updateBalanceAccount(currentaid, newBalance, function(err, rows){
+                                            if(err) throw err;
+                                        })
+                                        accountDao.checkBalanceAccount(destinedaid, function(err, rows){
+                                            if(err) throw err;
+                                            currentDestBalance = rows[0][0]["act_balance"];
+                                            newDestBalance = currentDestBalance + amount;
+                                            accountDao.updateBalanceAccount(destinedaid, newDestBalance,function(err, rows){
+                                                if(err) throw err;
+                                                res.json({success: "An amount of " + amount + " has been transferred from account " + currentaid + " to account " + destinedaid})
+                                            })
+                                        })
+                                        
+                                    }else{
+                                        res.json({error: "The account you wish to transfer to is invalid"})
+                                    }
+                                })
+                            }else{
+                                res.json({error: "The account you wish to transfer to is invalid"})
+                            }
+                            
+                        })
+                    }else{
+                        res.json({error: "You have insufficient funds to transfer"})
+                    }
+                })
+            }
+            
+            
+        }else{
+            res.json({error: "The action you have performed is invalid"})
+        }
+
+    })
     app.get('/api/accounts/:accountId/transactions', (req, res) => {
         let aid = req.params.accountId
         

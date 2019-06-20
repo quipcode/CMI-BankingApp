@@ -9,6 +9,13 @@ var transAction = document.getElementById("transButton")
 var selectedTrans = document.getElementById("transactionSelection")
 var amount = document.getElementById("amount")
 
+var transferFrom = document.getElementById("transferForm");
+var transferButton = document.getElementById("transferButton");
+var transferDest = document.getElementById("transferDestination");
+var transferAmount = document.getElementById("transferAmount");
+
+
+
 
 for(var i = 0; i < myTrans.length; i++){
     let row = listTransBody.insertRow(i);
@@ -25,6 +32,8 @@ for(var i = 0; i < myTrans.length; i++){
         cell4.innerHTML = myTrans[i].withdraw
     }else if(myTrans[i].description == "Deposit"){
         cell4.innerHTML = myTrans[i].deposit
+    }else if(myTrans[i].description == "Transfer"){
+        cell4.innerHTML = myTrans[i]["transfer_amount"]
     }
     cell5.innerHTML = myTrans[i].account_bal;
 }
@@ -37,9 +46,7 @@ transForm.addEventListener('click', function(e){
 transAction.addEventListener("click",sendingTrans )
 
 function sendingTrans(){
-    
     let formData = {"action": selectedTrans.options[selectedTrans.selectedIndex].value, "amount": amount.value, "AccountId": localStorage.getItem("AccountId")}
-    
     let url = server + "/accounts/" + localStorage.getItem("AccountId") + "/transaction";
     doPost(url, formData, function(res){
         if(res.error){
@@ -48,9 +55,28 @@ function sendingTrans(){
             alert(res.success)
             listMyTransactions()
         }
-        
     })
-    
+}
+
+
+transferButton.addEventListener("click", sendingTransfer);
+
+transferFrom.addEventListener("click", function(e){
+    e.preventDefault();
+})
+
+function sendingTransfer(){
+    let formData = {"action": "Transfer", "amount": parseInt(transferAmount.value), currentAccountId: localStorage.getItem("AccountId"), destinedAccountId: transferDest.value}
+    let url = server + "/accounts/transfer";
+    doPost(url, formData, function(res){
+        if(res.error){
+            alert(res.error);
+        }else if(res.success){
+            alert(res.success);
+            listMyTransactions();
+        }
+    })
+     
 }
 
 function listMyTransactions(){
@@ -59,9 +85,7 @@ function listMyTransactions(){
     $.getJSON(url).then(function(res){
         allTransactionForAccount = JSON.stringify(res);
         localStorage.setItem("Transactions", allTransactionForAccount)
-        
     })
-    
     window.location.href = "./viewaccount.html"
 }
 

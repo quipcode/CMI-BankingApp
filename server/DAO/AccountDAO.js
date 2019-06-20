@@ -22,11 +22,25 @@ var AccountDAO = {
     updateBalanceAccount: function(accountId, newBalance,callback){
         return db.query("call updateBalanceAccount(?,?)", [accountId, newBalance], callback)
     },
+
+    confirmAccountExists: function(accountId, callback){
+        return db.query("call confirmAccountExists(?)", accountId, callback);
+    },
+
+    confirmActiveAccount: function(accountId, callback){
+        return db.query("call confirmActiveAccount(?)", accountId, callback)
+    },
     
-    makeWithdrawAccount: function(){},
+    makeWithdrawTransaction: function(accountId, newTransBal, withdrawAmount, callback){
+        return db.query("call withdrawTrans(?,?,?)", [accountId, newTransBal, withdrawAmount], callback);
+    },
 
     makeDepositTransaction: function(accountId, newTransBal, depositAmount, callback){
-        return db.query("call depositTrans(?,?,?)", [accountId, newTransBal,depositAmount],callback)
+        return db.query("call depositTrans(?,?,?)", [accountId, newTransBal,depositAmount],callback);
+    },
+
+    makeTransferTransaction: function(accountId, bal, transferAmount, transferaid, callback){
+        return db.query("call transferTrans(?,?,?,?)",[accountId, bal, transferAmount, transferaid], callback);
     }
 
 }

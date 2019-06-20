@@ -142,20 +142,20 @@
                 <h3 class="panel-title">Make a Transfer</h3>
               </div>
               <div class="panel-body">
-                <form class="form-inline">
-                  <div class="form-group">
+                <form class="form-inline" id="transferForm" method="POST">
+                  <!-- <div class="form-group">
                     <label for="description">Originating Account</label>
                     <input type="text" class="form-control mr-1" id="description" placeholder="Transfer From Act#" ng-model='transaction.description'>
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <label for="description">Destined Account</label>
-                    <input type="text" class="form-control mr-1" id="description" placeholder="Transfer To Act#" ng-model='transaction.description'>
+                    <input type="text" class="form-control mr-1" placeholder="Transfer To Act#" ng-model='transaction.description' id="transferDestination" >
                   </div>
                   <div class="input-group">
                       <label for="description">Transfer Amount</label>
-                      <input type="number" step="0.01" min=0 class="form-control mr-1" id="amount" placeholder="$0.00" ng-model="transaction.amount">
+                      <input type="number" step="0.01" min=0 class="form-control mr-1" placeholder="$0.00" ng-model="transaction.amount" id="transferAmount">
                   </div>
-                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()">Save</button>
+                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()" id="transferButton">Save</button>
                 </form>
               </div>
             </div>

@@ -72,19 +72,21 @@
       </nav>
       <!--/.Navbar -->
 
-      <div class="hero-wrap js-fullheight" style="background-image: url('images/samuel-clara-69657-unsplash.jpg'); background-size:cover" data-stellar-background-ratio="0.5" id="imageclimb">
+      <div class="hero-wrap js-fullheight" style=" background-size:cover" data-stellar-background-ratio="0.5" id="imageclimb">
         <div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
             <div class="col-xl-10 ftco-animate mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }">
                 <!-- <p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Enabling you to reach higher heights...</p> -->
-              <h1 class=" mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Welcome <span> Username</span></h1>
+              <h1 class=" mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Welcome <span id="UserNameSpan"> Username</span></h1>
                 <p>What would you like to do today?</p>
               <!-- Employee/admin search functionality -->
               <div class="btn-toolbar mt-4" role="toolbar" aria-label="Toolbar with button groups" id="accountactions">
                     <div class="btn-group ml-4 mr-3" role="group" aria-label="First group">
                       <!-- <button type="button" class="btn">Create New Account</button> -->
-                      <a href="myaccounts.html" class="btn">View your accounts</a>
+                      <!-- <a href="myaccounts.html" class="btn" id="viewMyAccountsBtn">View your accounts</a> -->
+                      
+                      <a class="btn" href="myaccounts.html" id="viewMyAccountsBtn">View your accounts</a>
                     </div>
                     <div class="btn-group mr-3" role="group" aria-label="Second group">
                       <!-- <button type="button" class="btn">Grant Access</button> -->
@@ -108,5 +110,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/userwelcome.js"></script>
 </body>
 </html>

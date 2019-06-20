@@ -27,7 +27,7 @@
                             <div class="col-sm-6 offset-sm-3 text-center">
                                 <h1 class="display-4">Cash me Inside</h1>
                                 <div class="info-form">
-                                        <form class="text-center border border-light p-5">
+                                        <form class="text-center border border-light p-5" id="registerForm2" method="POST">
 
                                                 <p class="h4 mb-4">Register</p>
                                                 <p>Please provide your Address</p>
@@ -35,8 +35,8 @@
                                                 <!-- Address -->
                                                 <input type="text" id="defaultLoginFormAddressStreet" class="form-control mb-4" placeholder="Street Address">
                                                 <input type="text" id="defaultLoginFormAddressCity" class="form-control mb-4" placeholder="City">
-                                                <input type="text" id="defaultLoginFormAddressCity" class="form-control mb-4" placeholder="State">
-                                                <input type="text" id="defaultLoginFormAddressCity" class="form-control mb-4" placeholder="Zip Code">
+                                                <input type="text" id="defaultLoginFormAddressCountry" class="form-control mb-4" placeholder="Country">
+                                                <input type="text" id="defaultLoginFormAddressZip" class="form-control mb-4" placeholder="Zip Code">
                                                 
 
 
@@ -58,7 +58,7 @@
                                                 
                                               
                                                 <!-- Sign in button -->
-                                                <button class="btn btn-info btn-block my-4" type="submit">Register</button>
+                                                <button class="btn btn-info btn-block my-4" type="submit" id="registerSubmitBtn2">Register</button>
                                               
                                                 
                                               
@@ -88,5 +88,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/register2.js"></script>
 </body>
 </html>

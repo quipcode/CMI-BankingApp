@@ -91,7 +91,7 @@
                 aria-labelledby="navbarDropdownMenuLink-55">
                 <a class="dropdown-item" href="userprofile.html">My Profile</a>
                 <a class="dropdown-item" href="myaccounts.html">My Accounts</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">LogOut</a>
               </div>
             </li>
           </ul>
@@ -115,22 +115,22 @@
                 <h3 class="panel-title">Make a Transaction</h3>
               </div>
               <div class="panel-body">
-                <form class="form-inline">
-                  <div class="form-group">
+                <form class="form-inline" id="transactionForm" method="POST">
+                  <!-- <div class="form-group">
                     <label for="description">Description</label>
                     <input type="text" class="form-control" id="description" placeholder="" ng-model='transaction.description'>
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <div class="input-group">
                       
                       <input type="number" step="0.01" min=0 class="form-control" id="amount" placeholder="$0.00" ng-model="transaction.amount">
                     </div>
                   </div>
-                  <select class="form-control" ng-model="transaction.type">
-                    <option value='deposit'>Deposit</option>
-                    <option value='withdraw'>Withdraw</option>
+                  <select class="form-control" ng-model="transaction.type" id="transactionSelection">
+                    <option value='Deposit'>Deposit</option>
+                    <option value='Withdraw'>Withdraw</option>
                   </select>
-                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()">Save</button>
+                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()" id="transButton">Submit</button>
                 </form>
               </div>
             </div>
@@ -180,35 +180,32 @@
               <table class="table table-striped mb-7" id="transactiontable">
                     <thead class="thead-dark">
                       <tr>
+                        <th scope="col">Account ID</th>
                         <th scope="col">Date</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Type</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Balance</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="listingTransactionsBody">
+                      <!-- <tr>
                         <th scope="row">1</th>
                         <td>Credit</td>
-                        <td>No</td>
                         <td>View</td>
                         <td>View</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>Debit</td>
-                        <td>No</td>
                         <td>View</td>
                         <td>View</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td>Larry</td>
-                        <td>Yes</td>
                         <td><span title="Click to view account"> <a href="viewaccount.html">View</a></span> </td>
                         <td>View</td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                   
@@ -229,5 +226,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="./js/viewaccount.js"></script>
 </body>
 </html>

@@ -27,20 +27,21 @@
                             <div class="col-sm-6 offset-sm-3 text-center">
                                 <h1 class="display-4">Cash me Inside</h1>
                                 <div class="info-form">
-                                        <form class="text-center border border-light p-5">
+                                        <form class="text-center border border-light p-5" method="POST"  id="registerForm1">
 
                                                 <p class="h4 mb-4">Register</p>
                                                 
                                               
                                                 <!-- Email -->
-                                                <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail/Username">
+                                                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
                                               
                                                 <!-- Password -->
-                                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-                                                <input type="password" id="defaultLoginFormPasswordConfirm" class="form-control mb-4" placeholder="Renter Password">
-                                                <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="First Name">
-                                                <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Last Name">
-                                                <input type="tel" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                                
+                                                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Password">
+                                                <input type="password" id="defaultRegisterFormPasswordConfirm" class="form-control mb-4" placeholder="Renter Password">
+                                                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First Name">
+                                                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name">
+                                                <!-- <input type="tel" id="defaultRegisterFormPhone" class="form-control mb-4" placeholder="Phone"pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> <span> Phone Format: 123-456-7891</span> -->
                                                 <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Language"> -->
                                                 <!-- <p> Provide your address below </p> -->
                                                 <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Street Address">
@@ -52,7 +53,7 @@
                                                 
                                               
                                                 <!-- Sign in button -->
-                                                <button class="btn btn-info btn-block my-4" type="submit"> Continue Registration</button>
+                                                <button class="btn btn-info btn-block my-4" type="submit" id="registerSubmitBtn1"> Continue Registration</button>
                                                 
                                               
                                                 
@@ -83,5 +84,8 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    
 </body>
+<script src="js/register1.js"></script>
 </html>
+
